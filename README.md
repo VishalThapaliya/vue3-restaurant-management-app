@@ -20,6 +20,10 @@ npm run build
 npm run lint
 ```
 
+[!NOTE]
+
+**json-server** package must be installed and should in the running mode to make this app working.
+
 ### Project Modules
 - Login User
 - Register User
