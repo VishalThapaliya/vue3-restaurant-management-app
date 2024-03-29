@@ -29,6 +29,18 @@
       "email": "tata@test.com",
       "password": "tata@123",
       "id": 5
+    },
+    {
+      "name": "Papa",
+      "email": "papa@test.com",
+      "password": "papa@123",
+      "id": 6
+    },
+    {
+      "name": "John",
+      "email": "john@test.com",
+      "password": "john@123",
+      "id": 7
     }
   ]
 }

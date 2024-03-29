@@ -38,6 +38,13 @@ export default {
             }
 
         }
+    },
+    mounted() {
+        const loggedInUser = localStorage.getItem('user-info');
+
+        if(loggedInUser) {
+            this.$router.push({ name: 'Home'});
+        }
     }
 }
 </script>
