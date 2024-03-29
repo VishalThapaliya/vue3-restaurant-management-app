@@ -14,7 +14,7 @@ export default {
         const loggedInUser = localStorage.getItem('user-info');
 
         if(!loggedInUser) {
-            this.$router.push({ name: 'SignUp' });
+            this.$router.push({ name: 'Login' });
         }
     }
 }
