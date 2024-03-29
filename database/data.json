@@ -11,6 +11,24 @@
       "email": "merina@test.com",
       "password": "merina@123",
       "id": 2
+    },
+    {
+      "name": "Bibi",
+      "email": "bibi@test.com",
+      "password": "bibi@123",
+      "id": 3
+    },
+    {
+      "name": "Toto",
+      "email": "toto@test.com",
+      "password": "toto@123",
+      "id": 4
+    },
+    {
+      "name": "tata",
+      "email": "tata@test.com",
+      "password": "tata@123",
+      "id": 5
     }
   ]
 }
