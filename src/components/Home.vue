@@ -4,7 +4,14 @@
 
 <script>
 export default {
-    name: 'Home'
+    name: 'Home',
+    mounted() {
+        const loggedInUser = localStorage.getItem('user-info');
+
+        if(!loggedInUser) {
+            this.$router.push({ name: 'SignUp' });
+        }
+    }
 }
 </script>
 
