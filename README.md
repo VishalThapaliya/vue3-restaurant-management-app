@@ -23,6 +23,10 @@ npm run lint
 [!NOTE]
 
 **json-server** package must be installed and should in the running mode to make this app working.
+To make the database running and available, go to the database folder and run the following command.
+```
+json-server --watch data.json
+```
 
 ### Project Modules
 - Login User

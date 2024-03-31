@@ -1,10 +1,11 @@
 <template>
   <header>
-    <h1 class="title">Header</h1>
+    <img class="header-logo" src="../assets/logo.png" alt="logo_image">
+    <h3 class="title">Hello {{ username }}</h3>
     <div class="nav">
-        <a href="#">Home</a>
-        <a href="#">Add Restaurant</a>
-        <a href="#">Update Restaurant</a>
+        <router-link to="/">Home</router-link>
+        <router-link to="add-restaurant">Add Restaurant</router-link>
+        <router-link to="update-restaurant">Update Restaurant</router-link>
         <a href="#" @click="logout">Logout</a>
     </div>
   </header>
@@ -13,10 +14,23 @@
 <script>
 export default {
     name: 'Header',
+    data() {
+        return {
+            username: ''
+        }
+    },
     methods: {
         logout() {
             localStorage.clear();
             this.$router.push({ name: 'Login' });
+        }
+    },
+    mounted() {
+        const loggedInUser = localStorage.getItem('user-info');
+        this.username = JSON.parse(loggedInUser).name;
+
+        if(!loggedInUser) {
+            this.$router.push({ name: 'Login'});
         }
     }
 }
@@ -25,13 +39,22 @@ export default {
 <style>
 header {
     display: flex;
+    align-items: center;
+    gap: 1rem;
     width: 100%;
     background-color: lightgreen;
     padding-block: 1rem;
+
+}
+
+header .header-logo {
+    padding-left: 1rem;
+    width: 4rem;
 }
 
 header .title {
-    padding-left: 2rem 
+    width: -webkit-fill-available;
+    text-align: left;
 }
 
 header .nav {
