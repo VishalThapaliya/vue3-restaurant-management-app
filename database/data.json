@@ -45,10 +45,10 @@
   ],
   "restaurants": [
     {
-      "id": 1,
       "name": "Restaurant Himalayan",
       "address": "Paris, France",
-      "contact": 123456789
+      "contact": "0123456789",
+      "id": 1
     },
     {
       "id": 2,
