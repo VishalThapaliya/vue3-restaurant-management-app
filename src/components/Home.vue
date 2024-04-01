@@ -18,10 +18,12 @@
             <td style="text-align: center"><button @click="confirmDelete(restaurant.id)">Delete</button></td>
         </tr>
     </table>
+    <Footer />
 </template>
 
 <script>
 import Header from './Header.vue'
+import Footer from './Footer.vue'
 import axios from 'axios';
 export default {
     name: 'Home',
@@ -31,7 +33,8 @@ export default {
         }
     },
     components: {
-        Header
+        Header,
+        Footer
     },
     mounted() {
         this.loadRestaurantData();

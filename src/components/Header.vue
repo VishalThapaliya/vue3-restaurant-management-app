@@ -56,6 +56,7 @@ header .header-logo {
 header .title {
     width: -webkit-fill-available;
     text-align: left;
+    color: rgba(6, 3, 173, 0.473);
 }
 
 header .nav {
