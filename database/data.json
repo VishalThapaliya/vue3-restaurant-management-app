@@ -61,6 +61,18 @@
       "name": "Royal Pokhara",
       "address": "Paris, France",
       "contact": 987612345
+    },
+    {
+      "name": "Restaurant Annapurna",
+      "address": "Toulouse, France",
+      "contact": 1245783690,
+      "id": 4
+    },
+    {
+      "name": "Momo House",
+      "address": "Grenoble, France",
+      "contact": "1742853960",
+      "id": 5
     }
   ]
 }

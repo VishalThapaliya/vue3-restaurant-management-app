@@ -39,7 +39,6 @@ export default {
 
         const getRestaurantsURL = 'http://localhost:3000/restaurants';
         let restaurants = await axios.get(getRestaurantsURL);
-        console.log("outside", restaurants);
         this.restaurants = restaurants.data;
     }
 }

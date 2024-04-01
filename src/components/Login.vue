@@ -1,7 +1,7 @@
 <template>
   <img class="logo" src="../assets/logo.png" alt="restaurant logo">
   <h1>Login</h1>
-  <div class="registration-container">
+  <div class="form-container">
     <input type="email" v-model="email" placeholder="Enter email" required>
     <input type="password" v-model="password" placeholder="Enter password" required>
     <button @click="login">Login</button>
@@ -27,8 +27,6 @@ export default {
             const url = `http://localhost:3000/users?email=${this.email}&password=${this.password}`;
             const user = await axios.get(url);
 
-            console.warn(user);
-
             if(user.status == 200 && user.data.length > 0) {
                 localStorage.setItem('user-info', JSON.stringify(user.data[0]));
                 this.$router.push({ name: 'Home' });
@@ -48,15 +46,15 @@ export default {
 </script>
 
 <style>
-.registration-container .sign-up {
+.form-container .sign-up {
     padding: 0.5rem;
 }
 
-.registration-container .sign-up a {
+.form-container .sign-up a {
     text-decoration: none;
 }
 
-.registration-container .sign-up a:hover {
+.form-container .sign-up a:hover {
     text-decoration: underline;
 }
 </style>
