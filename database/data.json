@@ -63,16 +63,10 @@
       "contact": 987612345
     },
     {
-      "name": "Restaurant Annapurna",
+      "name": "Annapurna Restaurant",
       "address": "Toulouse, France",
-      "contact": 1245783690,
+      "contact": "01254789632",
       "id": 4
-    },
-    {
-      "name": "Momo House",
-      "address": "Grenoble, France",
-      "contact": "1742853960",
-      "id": 5
     }
   ]
 }
