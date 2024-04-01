@@ -42,5 +42,25 @@
       "password": "john@123",
       "id": 7
     }
+  ],
+  "restaurants": [
+    {
+      "id": 1,
+      "name": "Restaurant Himalayan",
+      "address": "Paris, France",
+      "contact": 123456789
+    },
+    {
+      "id": 2,
+      "name": "Katmandou Restaurant",
+      "address": "Grenoble, France",
+      "contact": 987654321
+    },
+    {
+      "id": 3,
+      "name": "Royal Pokhara",
+      "address": "Paris, France",
+      "contact": 987612345
+    }
   ]
 }
