@@ -7,14 +7,15 @@
             <th>Restaurant Name</th>
             <th>Address</th>
             <th>Contact</th>
-            <th>Actions</th>
+            <th colspan="2" style="text-align: center">Actions</th>
         </tr>
         <tr v-for="restaurant in restaurants" :key="restaurant.id">
             <td>{{restaurant.id}}</td>
             <td>{{restaurant.name}}</td>
             <td>{{ restaurant.address }}</td>
             <td>{{ restaurant.contact }}</td>
-            <td><router-link :to="'/update-restaurant/' + restaurant.id">Edit</router-link></td>
+            <td style="text-align: center"><router-link :to="'/update-restaurant/' + restaurant.id">Edit</router-link></td>
+            <td style="text-align: center"><button @click="confirmDelete(restaurant.id)">Delete</button></td>
         </tr>
     </table>
 </template>
@@ -32,16 +33,34 @@ export default {
     components: {
         Header
     },
-    async mounted() {
-        const loggedInUser = localStorage.getItem('user-info');
+    mounted() {
+        this.loadRestaurantData();
+    },
+    methods: {
+        async deleteRestaurant(id) {
+            const url = `http://localhost:3000/restaurants/${id}`;
+            const deleteRestaurantById = await axios.delete(url);
 
-        if(!loggedInUser) {
-            this.$router.push({ name: 'Login' });
+            if(deleteRestaurantById.status === 200) {
+                this.loadRestaurantData();
+            }
+        },
+        async loadRestaurantData() {
+            const loggedInUser = localStorage.getItem('user-info');
+
+            if(!loggedInUser) {
+                this.$router.push({ name: 'Login' });
+            }
+
+            const getRestaurantsURL = 'http://localhost:3000/restaurants';
+            let restaurants = await axios.get(getRestaurantsURL);
+            this.restaurants = restaurants.data;
+        },
+        confirmDelete(id) {
+            if(confirm("Are you sure you want to delete this restaurant?")) {
+                this.deleteRestaurant(id);
+            }
         }
-
-        const getRestaurantsURL = 'http://localhost:3000/restaurants';
-        let restaurants = await axios.get(getRestaurantsURL);
-        this.restaurants = restaurants.data;
     }
 }
 </script>
