@@ -8,16 +8,18 @@
         <input type="text" placeholder="Enter restaurant contact" v-model="restaurant.contact"/>
         <button type="button" @click="addRestaurant">+ Add Restaurant</button>
     </form>
-     
+    <Footer/>
 </template>
 
 <script>
 import Header from './Header.vue'
+import Footer from './Footer.vue'
 import axios from 'axios';
 export default {
     name: 'AddRestaurant',
     components: {
-        Header
+        Header,
+        Footer
     },
     data() {
         return {
