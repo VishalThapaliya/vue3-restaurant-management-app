@@ -2,7 +2,7 @@
     <img class="logo" src="../assets/logo.png" alt="restaurant logo">
     <h1>Sign Up</h1>
 
-    <div class="registration-container">
+    <div class="form-container">
         <input type="text" v-model="name" placeholder="Enter name">
         <input type="email" v-model="email" placeholder="Enter email">
         <input type="password" v-model="password" placeholder="Enter password">
@@ -54,7 +54,7 @@ export default {
     width: 6rem;
 }
 
-.registration-container {
+.form-container {
     display: flex;
     flex-direction: column;
     padding: 3rem;
@@ -64,17 +64,17 @@ export default {
     margin: 0 auto;
 }
 
-.registration-container input,
-.registration-container button {
+.form-container input,
+.form-container button {
     padding: 1rem;
     border-radius: 0.7rem;
     margin: 0.5rem 0.25rem;
     border: 1px solid lightgray;
-  }
+}
 
-  .registration-container button {
+.form-container button {
     font-size: 1rem;
     background-color: lightgreen;
     cursor: pointer;
-  }
+}
 </style>
